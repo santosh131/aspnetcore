@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "environment", "environment", "{F015CE72-4AB7-408B-88EE-0F4056D321C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apphostingenvironment", "environment\apphostingenvironment\apphostingenvironment.csproj", "{6AD46FD6-61FC-4ABF-9D37-7FBA9010962A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "routing", "routing\routing.csproj", "{DB7C0B2A-8EDC-458A-B9DB-54E2D7278064}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AD46FD6-61FC-4ABF-9D37-7FBA9010962A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD46FD6-61FC-4ABF-9D37-7FBA9010962A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD46FD6-61FC-4ABF-9D37-7FBA9010962A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD46FD6-61FC-4ABF-9D37-7FBA9010962A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB7C0B2A-8EDC-458A-B9DB-54E2D7278064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB7C0B2A-8EDC-458A-B9DB-54E2D7278064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB7C0B2A-8EDC-458A-B9DB-54E2D7278064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB7C0B2A-8EDC-458A-B9DB-54E2D7278064}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6AD46FD6-61FC-4ABF-9D37-7FBA9010962A} = {F015CE72-4AB7-408B-88EE-0F4056D321C8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C998828-B83B-4FE7-A414-8269A57E87C4}
+	EndGlobalSection
+EndGlobal
