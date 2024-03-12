@@ -4,6 +4,7 @@ using routing.Models;
 
 namespace routing.Controllers
 {
+    [Route("[controller]")]
     public class EmployeeController : MyBaseController
     {
         private static readonly EmployeeModel[] Employees = new[]
@@ -15,7 +16,7 @@ namespace routing.Controllers
             new EmployeeModel { Id = 5,  FirstName="Pinky", LastName="Vani" },
         };
 
-        [HttpGet]
+        [HttpGet("/GetEmployees")]
         public  IEnumerable<EmployeeModel> Get()
         {
             return Employees;
@@ -24,7 +25,8 @@ namespace routing.Controllers
         [HttpGet("{id}", Name ="GetEmployee")]
         public EmployeeModel GetEmployee(int id)
         {
-            return Employees.FirstOrDefault(e => e.Id == id) ;
+            var emp =Employees.FirstOrDefault(e => e.Id == id) ;
+            return emp?? new EmployeeModel();
         }
     }
 }

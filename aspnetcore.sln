@@ -7,7 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "environment", "environment"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apphostingenvironment", "environment\apphostingenvironment\apphostingenvironment.csproj", "{6AD46FD6-61FC-4ABF-9D37-7FBA9010962A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "routing", "routing\routing.csproj", "{DB7C0B2A-8EDC-458A-B9DB-54E2D7278064}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "routing", "routing\routing.csproj", "{DB7C0B2A-8EDC-458A-B9DB-54E2D7278064}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "areas", "areas\areas.csproj", "{832CBAEC-069E-4FB3-AE28-9C7416809FED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "modelbinding", "modelbinding\modelbinding.csproj", "{4F03E10A-9A87-4560-87FC-6E313E05D0D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,14 @@ Global
 		{DB7C0B2A-8EDC-458A-B9DB-54E2D7278064}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB7C0B2A-8EDC-458A-B9DB-54E2D7278064}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB7C0B2A-8EDC-458A-B9DB-54E2D7278064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{832CBAEC-069E-4FB3-AE28-9C7416809FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{832CBAEC-069E-4FB3-AE28-9C7416809FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{832CBAEC-069E-4FB3-AE28-9C7416809FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{832CBAEC-069E-4FB3-AE28-9C7416809FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F03E10A-9A87-4560-87FC-6E313E05D0D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F03E10A-9A87-4560-87FC-6E313E05D0D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F03E10A-9A87-4560-87FC-6E313E05D0D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F03E10A-9A87-4560-87FC-6E313E05D0D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

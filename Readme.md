@@ -14,7 +14,7 @@ The launchSettings.json file:
 - Is not deployed.  
 - Contains profile settings.  
 
-If nothing is mentioned in the lauchSettings.json then the defualt is "Production".
+If nothing is mentioned in the lauchSettings.json then the default is "Production".
 
 To set the ASPNETCORE_ENVIRONMENT for the current session when the app is started using dotnet run, use the following commands at in PowerShell  
 
@@ -52,8 +52,89 @@ Placing a route attribute on the controller makes all actions in the controller 
 Attribute routes can also be combined with inheritance(look for **MyBaseController**)  
 Attribute routing can use HttpMethodAttribute attributes such as **HttpPostAttribute, HttpPutAttribute, and HttpDeleteAttribute**  
 All of the HTTP verb attributes accept a route template.
+Once the route is added to HTTP verb attribute, Route attribute is not needed
 
 ## Conventional Routing
 Conventional Routing is used with Controllers and Views.  
 Conventional Routing are not displayed in Swagger
+
+### Areas
+##Add Area with Visual Studio
+
+-In Solution Explorer, right click the project and Select ADD > New Scaffolded Item, then select MVC Area  
+
+-Once the areas are added, add the following lines in the Program.cs  
+```
+app.UseEndPoints(endpoints =>{  
+ endpoints.MapControllerRoute(  
+	name: "Myarea",
+	pattern: "{areas:exists}/{controller=Home}/{action=Index}"  
+ );  
+});
+```
+
+Area routes typically use conventional routing rather tha attribute routing.  
+In general, routes with areas should be placed earlier in the route table as they are  
+more specific than routes wihtout an Area
+
+To implement areas in Asp.Net core web app using Controllers, Views
+- An Area folder structure
+- Add Area attribute to Controller - to associate the controller with area
+```
+[Area("Products")]
+public class ProductController: Controller
+```
+
+- Area route added to Program.cs
+```
+app.UseEndPoints(endpoints =>{  
+ endpoints.MapControllerRoute(  
+	name: "Myarea",
+	pattern: "{areas:exists}/{controller=Home}/{action=Index}"  
+ );
+});
+```
+To create the **named area routes** 
+
+```app.UseEndPoints(endpoints=>{
+	app.MapAreaControllerRoute(
+		name:"Products",
+		pattern:"Products/{Controller=Home}/{action=Index}"
+	);
+});
+
+app.UseEndpoints(endpoints=>{
+	app.MapAreaControllerRoute(
+		name:"Employees",
+		pattern:"Employees/{Controller=Home}/{action=Index}"
+	);
+});
+```
+- Move the _ViewImports.cshtml, _ViewStart.cshtml outside the **Views** folder, if the Layout has to be used for Views in areas  
+
+### Model Binding
+- Retrieves data from various sources such as route data, form fields and query string
+- Provides data to controllers and razor pages in method parameters and public properties
+- Converts string data to .Net Types
+- Updates properties of complex Types
+
+> Add the following code in the Program.cs otherwise the DefaultModelBinder will perform required and datatype validations on value types like int, string, datetime etc. This will happen even if the **[Required]** attribute is not applied.  
+
+```  
+builder.Services.AddControllers(options =>  
+{  
+    options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true;  
+});  
+```
+
+Model binding gets the data in the form of key-value pairs from the following sources
+- FromQuery : Values from Query String
+- FromRoute : Values from Route data
+- FromForm : Values from posted form fields
+- FromBody : Values from request body
+- FromHeader: Vlaues from HTTP headers
+
+> When [FromBody] is applied to the complex type parameter, any binding source applied to its properties are ignored  
+> Don't apply [FromBody] to more than one parameter per action method.Once the request stream is read the input formatter,it's no longer available to be read again for binding other [FromBody] parameters.  
+
 

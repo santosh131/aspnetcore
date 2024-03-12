@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model areas.Areas.Products.Data.ProductDTO
+
+Hello Producs Index
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover table-sm">
+        <caption>List of Products</caption>
+        <thead class="thead-light">
+            <tr>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Type
+                </th>
+                <th>
+                    ManufacturedDate
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Products.Count; i++)
+            {
+                <tr>
+                    <td> @Model.Products[i].Description </td>
+                    <td> @Model.Products[i].Type </td>
+                    <td> @Model.Products[i].ManufacturedDate </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
