@@ -128,13 +128,26 @@ builder.Services.AddControllers(options =>
 ```
 
 Model binding gets the data in the form of key-value pairs from the following sources
-- FromQuery : Values from Query String
-- FromRoute : Values from Route data
 - FromForm : Values from posted form fields
 - FromBody : Values from request body
+- FromRoute : Values from Route data
+- FromQuery : Values from Query String
 - FromHeader: Vlaues from HTTP headers
 
 > When [FromBody] is applied to the complex type parameter, any binding source applied to its properties are ignored  
 > Don't apply [FromBody] to more than one parameter per action method.Once the request stream is read the input formatter,it's no longer available to be read again for binding other [FromBody] parameters.  
+  
+**[BindProperty]** can be applied to public property of controller. Set the **SupportsGet** to **true** to bound data from GET requests.   
+**[BindProperties]** can be applied to controller to target all properties of class  
+```
+[BindProperty(Name="contact_id",SupportsGet=true)]  
+public int? ContactId{ get; set; }
+
+[BindProperties(SupportsGet=true)]
+public class ContactController:ControllerBase
+{
+
+}
+```
 
 

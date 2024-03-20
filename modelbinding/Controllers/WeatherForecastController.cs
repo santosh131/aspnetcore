@@ -4,6 +4,7 @@ namespace modelbinding.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[BindProperties(SupportsGet =true)]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -17,6 +18,9 @@ public class WeatherForecastController : ControllerBase
     {
         _logger = logger;
     }
+
+    public int? ID { get; set; }
+    public string? Name { get; set; }
 
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()

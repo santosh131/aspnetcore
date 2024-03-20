@@ -23,7 +23,7 @@ namespace modelbinding.Controllers
             return Contacts;
         }
 
-        [BindProperty(SupportsGet =true)]
+        [BindProperty(Name="contact_id", SupportsGet =true)]
         public int? ContactId { get; set; }
 
         [BindProperty(SupportsGet =true)]
