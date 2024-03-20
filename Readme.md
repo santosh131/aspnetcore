@@ -150,4 +150,22 @@ public class ContactController:ControllerBase
 }
 ```
 
+## Collections
+Model binding looks for matches to parameter_name
+Form or query string data can be bound in one of the following formats  
+```
+ public IEnumerable<WeatherForecast> GetWeatherForecastsMultiple([FromQuery]int[] ids){
+
+ }
+
+ .../GetWeatherForecastsMultiple?ids[0]=21&ids[1]=22
+
+
+ public IEnumerable<WeatherForecast> GetWeatherForecastsDictionary([FromQuery] Dictionary<int, string> contact){
+
+ }
+
+ .../GetWeatherForecastsDictionary?contact[0]=sam&contact[1]=tim
+ .../GetWeatherForecastsDictionary?contact[0].Key=101&contact[0].Value=sam&contact[1].Key=102&contact[1].Value=tim
+```
 
