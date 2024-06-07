@@ -1,5 +1,5 @@
 # ASP.net Core
-### Setting Environment variable
+## [Setting Environment variable](environment/Readme.md)
 
 Application will try to find & use appsetting.json related to that environment. 
 For example: If the application runs in Staging environment then appsettings.Staging.json is used, if the file is not found the appsettings.json is used.  
@@ -25,7 +25,7 @@ dotnet run --no-launch-profile
 
 > Setting this way, the application will run in the applied environemnt (eg: Staging) for the current session/context only  
 
-### Routing  
+## [Routing](routing/Readme.md)  
 Asp.net core inspects incoming HTTP requests and maps them to applications executable Endpoint  
 An endpoint is an object that contains eveything that is needed to execute the Request.  
 
@@ -43,10 +43,10 @@ MapGet: Creates the custom endpoints
 We can also create the endpoints using the map methods like **MapPost, MapPut, MapDelete & Map**  
 Middleware after UseEndPoints execute only when no match is found.  
 
-## Routing to Controller Action
+### Routing to Controller Action
 Actions are either **conventionally-routed** or **attribute-routed**  
 
-## Attribute Routing
+### Attribute Routing
 Placing a route on the Controller or Action makes it attribute routed.  
 Placing a route attribute on the controller makes all actions in the controller use attribute routing.  
 Attribute routes can also be combined with inheritance(look for **MyBaseController**)  
@@ -54,12 +54,12 @@ Attribute routing can use HttpMethodAttribute attributes such as **HttpPostAttri
 All of the HTTP verb attributes accept a route template.
 Once the route is added to HTTP verb attribute, Route attribute is not needed
 
-## Conventional Routing
+### Conventional Routing
 Conventional Routing is used with Controllers and Views.  
 Conventional Routing are not displayed in Swagger
 
-### Areas
-##Add Area with Visual Studio
+## [Areas](areas/Readme.md)
+### Add Area with Visual Studio
 
 -In Solution Explorer, right click the project and Select ADD > New Scaffolded Item, then select MVC Area  
 
@@ -112,7 +112,7 @@ app.UseEndpoints(endpoints=>{
 ```
 - Move the _ViewImports.cshtml, _ViewStart.cshtml outside the **Views** folder, if the Layout has to be used for Views in areas  
 
-### Model Binding
+## [Model Binding](modelbinding/Readme.md)
 - Retrieves data from various sources such as route data, form fields and query string
 - Provides data to controllers and razor pages in method parameters and public properties
 - Converts string data to .Net Types
@@ -150,7 +150,7 @@ public class ContactController:ControllerBase
 }
 ```
 
-## Collections
+### Collections
 Model binding looks for matches to parameter_name
 Form or query string data can be bound in one of the following formats  
 ```
